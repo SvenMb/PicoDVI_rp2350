@@ -56,6 +56,7 @@ int main() {
 #endif
 
 	setup_default_uart();
+	pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio,16);
 
 	gpio_init(LED_PIN);
 	gpio_set_dir(LED_PIN, GPIO_OUT);

@@ -6,6 +6,7 @@ target_compile_options(tiles_parallax PRIVATE -Wall)
 
 target_compile_definitions(tiles_parallax PRIVATE
 	DVI_DEFAULT_SERIAL_CONFIG=${DVI_DEFAULT_SERIAL_CONFIG}
+	PICO_PIO_USE_GPIO_BASE=1
 	)
 
 target_link_libraries(tiles_parallax

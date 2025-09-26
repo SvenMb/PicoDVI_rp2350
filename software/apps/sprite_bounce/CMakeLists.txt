@@ -10,6 +10,7 @@ target_compile_options(sprite_bounce PRIVATE -Wall)
 
 target_compile_definitions(sprite_bounce PRIVATE
 	DVI_DEFAULT_SERIAL_CONFIG=${DVI_DEFAULT_SERIAL_CONFIG}
+	PICO_PIO_USE_GPIO_BASE=1
 	)
 
 target_link_libraries(sprite_bounce

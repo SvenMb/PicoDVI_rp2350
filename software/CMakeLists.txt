@@ -8,6 +8,8 @@ pico_sdk_init()
 
 add_compile_options(-Wall)
 
+add_compile_definitions(PICO_PIO_USE_GPIO_BASE=1)
+
 # To change the default serial config for all apps, pass e.g.
 #   cmake -DDVI_DEFAULT_SERIAL_CONFIG=pimoroni_demo_hdmi_cfg ..
 # then rebuild. This is applied via target_compile_definitions on each app

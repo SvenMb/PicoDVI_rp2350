@@ -8,6 +8,7 @@ add_executable(mandelbrot
 
 target_compile_definitions(mandelbrot PRIVATE
 	DVI_DEFAULT_SERIAL_CONFIG=${DVI_DEFAULT_SERIAL_CONFIG}
+	PICO_PIO_USE_GPIO_BASE=1
 	)
 
 target_link_libraries(mandelbrot

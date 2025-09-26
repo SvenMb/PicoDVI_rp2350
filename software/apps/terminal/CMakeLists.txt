@@ -14,6 +14,7 @@ target_compile_definitions(terminal PRIVATE
 	DVI_VERTICAL_REPEAT=1
 	DVI_N_TMDS_BUFFERS=3
 	DVI_MONOCHROME_TMDS=1
+	PICO_PIO_USE_GPIO_BASE=1
 	)
 
 target_link_libraries(terminal

@@ -18,6 +18,15 @@
 // ----------------------------------------------------------------------------
 // PicoDVI boards
 
+// Waveshare RP2350-PiZero 
+static const struct dvi_serialiser_cfg waveshare_rp2350_pizero = {
+	.pio = DVI_DEFAULT_PIO_INST,
+	.sm_tmds = {0, 1, 2},
+	.pins_tmds = {36, 34, 32},
+	.pins_clk = 38,
+	.invert_diffpairs = false
+};
+
 // Legacy pin mapping for Rev A PicoDVI boards -- I think just Graham and I
 // have these :)
 static const struct dvi_serialiser_cfg picodvi_reva_dvi_cfg = {

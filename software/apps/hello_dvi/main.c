@@ -53,8 +53,7 @@ int main() {
 			uint y_scroll = (y + frame_ctr) % FRAME_HEIGHT;
 			const uint16_t *scanline = &((const uint16_t*)testcard_320x240)[y_scroll * FRAME_WIDTH];
 			queue_add_blocking_u32(&dvi0.q_colour_valid, &scanline);
-			while (queue_try_remove_u32(&dvi0.q_colour_free, &scanline))
-				;
+			while (queue_try_remove_u32(&dvi0.q_colour_free, &scanline));
 		}
 		++frame_ctr;
 	}
