@@ -124,6 +124,10 @@ int main() {
 
 	setup_default_uart();
 
+	#if PICO_PIO_USE_GPIO_BASE
+	pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio,16);
+	#endif
+
 	dvi0.timing = &DVI_TIMING;
 	dvi0.ser_cfg = DVI_DEFAULT_SERIAL_CONFIG;
 	dvi_init(&dvi0, next_striped_spin_lock_num(), next_striped_spin_lock_num());

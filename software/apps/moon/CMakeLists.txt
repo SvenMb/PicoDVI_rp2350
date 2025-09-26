@@ -10,9 +10,14 @@ target_compile_definitions(moon PRIVATE
 	DVI_DEFAULT_SERIAL_CONFIG=${DVI_DEFAULT_SERIAL_CONFIG}
 	DVI_VERTICAL_REPEAT=1
 	DVI_N_TMDS_BUFFERS=3
-	PICO_PIO_USE_GPIO_BASE=1
 	DVI_MONOCHROME_TMDS
 )
+
+if(DVI_SERIAL_USES_LARGE_GPIO STREQUAL 1)
+	target_compile_definitions(moon PRIVATE
+		PICO_PIO_USE_GPIO_BASE=1
+	)
+endif()
 
 target_link_libraries(moon
 	pico_stdlib

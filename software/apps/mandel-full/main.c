@@ -133,8 +133,9 @@ int __not_in_flash("main") main() {
 
   setup_default_uart();
 
+  #if PICO_PIO_USE_GPIO_BASE
   pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio,16);
-
+  #endif
   gpio_init(PICO_DEFAULT_LED_PIN);
   gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
   

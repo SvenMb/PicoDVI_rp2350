@@ -21,8 +21,13 @@ else ()
 		PICO_BOOT_STAGE2_CHOOSE_W25Q080=1
 		PICO_FLASH_SPI_CLKDIV=2
 		PICO_FLASH_SPI_RXDELAY=3
-		PICO_PIO_USE_GPIO_BASE=1
 		)
+endif()
+
+if(DVI_SERIAL_USES_LARGE_GPIO STREQUAL 1)
+	target_compile_definitions(vista-palette PRIVATE
+		PICO_PIO_USE_GPIO_BASE=1
+	)
 endif()
 
 target_compile_definitions(vista-palette PRIVATE

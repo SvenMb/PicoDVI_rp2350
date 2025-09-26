@@ -11,7 +11,6 @@ target_compile_definitions(vista PRIVATE
 	DVI_VERTICAL_REPEAT=1
 	DVI_N_TMDS_BUFFERS=5
 	DVI_SYMBOLS_PER_WORD=1
-	PICO_PIO_USE_GPIO_BASE=1
 	)
 
 if (PICO_RP2040)
@@ -25,6 +24,12 @@ else ()
 		PICO_FLASH_SPI_CLKDIV=2
 		PICO_FLASH_SPI_RXDELAY=3
 		)
+endif()
+
+if(DVI_SERIAL_USES_LARGE_GPIO STREQUAL 1)
+	target_compile_definitions(vista PRIVATE
+		PICO_PIO_USE_GPIO_BASE=1
+	)
 endif()
 
 target_compile_definitions(vista PRIVATE PICO_STACK_SIZE=0x200)

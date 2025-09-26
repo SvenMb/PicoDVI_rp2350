@@ -36,6 +36,10 @@ int main() {
 	set_sys_clock_khz(DVI_TIMING.bit_clk_khz, true);
 
 	setup_default_uart();
+	
+	#if PICO_PIO_USE_GPIO_BASE
+	pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio,16);
+	#endif
 
 	dvi0.timing = &DVI_TIMING;
 	dvi0.ser_cfg = DVI_DEFAULT_SERIAL_CONFIG;

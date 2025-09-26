@@ -6,8 +6,13 @@ target_compile_options(tiles_parallax PRIVATE -Wall)
 
 target_compile_definitions(tiles_parallax PRIVATE
 	DVI_DEFAULT_SERIAL_CONFIG=${DVI_DEFAULT_SERIAL_CONFIG}
-	PICO_PIO_USE_GPIO_BASE=1
 	)
+
+if(DVI_SERIAL_USES_LARGE_GPIO STREQUAL 1)
+	target_compile_definitions(tiles_parallax PRIVATE
+		PICO_PIO_USE_GPIO_BASE=1
+	)
+endif()
 
 target_link_libraries(tiles_parallax
 	pico_stdlib

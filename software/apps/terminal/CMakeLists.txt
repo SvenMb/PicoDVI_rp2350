@@ -14,8 +14,13 @@ target_compile_definitions(terminal PRIVATE
 	DVI_VERTICAL_REPEAT=1
 	DVI_N_TMDS_BUFFERS=3
 	DVI_MONOCHROME_TMDS=1
-	PICO_PIO_USE_GPIO_BASE=1
 	)
+
+if(DVI_SERIAL_USES_LARGE_GPIO STREQUAL 1)
+	target_compile_definitions(terminal PRIVATE
+		PICO_PIO_USE_GPIO_BASE=1
+	)
+endif()
 
 target_link_libraries(terminal
 	pico_stdlib
