@@ -135,10 +135,11 @@ int __not_in_flash("main") main() {
 
   #if PICO_PIO_USE_GPIO_BASE
   pio_set_gpio_base(DVI_DEFAULT_SERIAL_CONFIG.pio,16);
-  #endif
+  #else 
   gpio_init(PICO_DEFAULT_LED_PIN);
   gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
-  
+  #endif
+
   init_palette();
   init_mandel();
 
@@ -160,8 +161,10 @@ int __not_in_flash("main") main() {
   while (1) {
     if (++heartbeat >= 30) {
       heartbeat = 0;
-      gpio_xor_mask(1u << PICO_DEFAULT_LED_PIN);
-
+      #if !PICO_PIO_USE_GPIO_BASE
+        gpio_xor_mask(1u << PICO_DEFAULT_LED_PIN);
+      #endif
+    
       printf("Encode total time: %ldus\n", encode_time);
       encode_time = 0;
     }

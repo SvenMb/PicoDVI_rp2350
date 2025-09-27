@@ -38,6 +38,11 @@ Serial configurations for a handful of boards are listed in [common_dvi_pin_conf
 
 As well as the DVI serial configuration, you may also want to set the `PICO_BOARD` flag for your target board to pick up things like UART and LED pin settings.
 
+Example config, for waveshare rp2350 zero
+```
+cmake  -DPICO_PLATFORM=rp2350  -DPICO_COPY_TO_RAM=1 -DDVI_DEFAULT_SERIAL_CONFIG=waveshare_rp2350_pizero -DPICO_BOARD=waveshare_rp2350_zero ..
+```
+
 Example Apps
 ------------
 
