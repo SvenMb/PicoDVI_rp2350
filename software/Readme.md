@@ -40,7 +40,7 @@ As well as the DVI serial configuration, you may also want to set the `PICO_BOAR
 
 Example config, for waveshare rp2350 zero
 ```
-cmake  -DPICO_PLATFORM=rp2350  -DPICO_COPY_TO_RAM=1 -DDVI_DEFAULT_SERIAL_CONFIG=waveshare_rp2350_pizero -DPICO_BOARD=waveshare_rp2350_zero ..
+cmake  -DPICO_PLATFORM=rp2350  -DPICO_COPY_TO_RAM=1 -DPICO_BOARD=waveshare_rp2350_zero ..
 ```
 
 Example Apps
