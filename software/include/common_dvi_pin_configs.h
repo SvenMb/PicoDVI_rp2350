@@ -8,7 +8,7 @@
 #include "dvi_serialiser.h"
 
 #ifndef DVI_DEFAULT_SERIAL_CONFIG
-#define DVI_DEFAULT_SERIAL_CONFIG pico_sock_cfg
+#define DVI_DEFAULT_SERIAL_CONFIG waveshare_rp2350_pizero
 #endif
 
 #ifndef DVI_DEFAULT_PIO_INST
@@ -19,7 +19,7 @@
 // PicoDVI boards
 
 // Waveshare RP2350-PiZero 
-static const struct dvi_serialiser_cfg waveshare_rp2350_zero = {
+static const struct dvi_serialiser_cfg waveshare_rp2350_pizero = {
 	.pio = DVI_DEFAULT_PIO_INST,
 	.sm_tmds = {0, 1, 2},
 	.pins_tmds = {36, 34, 32},
