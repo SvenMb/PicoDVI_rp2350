@@ -9,8 +9,8 @@ pico_sdk_init()
 add_compile_options(-Wall)
 
 # Detect pico boards with rp2350B
-if(PICO_BOARD STREQUAL "waveshare_rp2350_zero")
-	set(DVI_DEFAULT_SERIAL_CONFIG "waveshare_rp2350_zero")
+if(PICO_BOARD STREQUAL "waveshare_rp2350_pizero")
+	set(DVI_DEFAULT_SERIAL_CONFIG "waveshare_rp2350_pizero")
 	set(DVI_SERIAL_USES_LARGE_GPIO 1)
 	add_compile_definitions(PICO_PIO_USE_GPIO_BASE=1)
 else()
